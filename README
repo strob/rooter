@@ -37,7 +37,11 @@ Then start up the core rooter service with node:
 % node core.js
 
 This will host on port 9000 a simulation of the rooter API and web
-services, for example, test the proxy at:
+services, for example, test the logging and proxy at:
+
+http://localhost:9000/logging
+
+and then, with this tab still open, visit the proxy submodule:
 
 http://localhost:9000/proxy
 

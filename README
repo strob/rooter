@@ -1,0 +1,52 @@
+Experimental rooter API implemented in NodeJS /
+Provides javascript control of all core router functions.
+
+The rooter API is inspired by socket.io to allow highly asynchronous,
+realtime, event broadcasting. Much like socket fires events when a
+client connects to a website, the rooter API broadcasts connections to
+the router. These connections can then be manipulated server-side,
+where full router control is exposed to a simple Javascript
+API. Additionally, to ease testing, connections can be simulated
+from within a web browser.
+
+The rooter configuration interface is written using the rooter API and
+can be used as reference for accessing and manipulating core
+functionality.
+
+== DESIGN
+
+Core rooter state is maintained in a singleton object, `rooter':
+
+var rooter = require('rooter');
+
+The `core.js' node script is run on the router and loads/dispatches to
+other modules as necessary. The default dispatch scheme is
+subdirectory-based, ie. http://rooter/proxy loads the `proxy'
+submodule.
+
+== INSTALLATION
+
+For development (and, at the moment, that's all we've got folks),
+symlink node modules into a home-directory node folder, for example
+with the included shell script:
+
+% sh dev_install.sh
+
+Then start up the core rooter service with node:
+
+% node core.js
+
+This will host on port 9000 a simulation of the rooter API and web
+services, for example, test the proxy at:
+
+http://localhost:9000/proxy
+
+== APPS
+
++ host a directory of files
+
++ filter images, ala http://www.ex-parrot.com/pete/upside-down-ternet.html
+
++ logging
+
++ proxy

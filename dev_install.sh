@@ -6,6 +6,9 @@ fi
 # including files as, eg., require('rooter'), so that singleton
 # objects can be shared between different scripts.
 # XXX: Is this really guaranteed? The docs[1] seem slightly ambiguous.
+# XXX: Also, do we really want *all* node_modules to be installed
+#      system-wide?
+# 
 # 
 # [1] http://nodejs.org/api/modules.html#modules_module_caching_caveats
 

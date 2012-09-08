@@ -26,18 +26,12 @@ submodule.
 
 == INSTALLATION
 
-For development (and, at the moment, that's all we've got folks),
-symlink node modules into a home-directory node folder, for example
-with the included shell script:
-
-% sh dev_install.sh
-
-You will also need to make sure that socket.io is installed:
+Some modules require that socket.io be installed:
 
 % sudo apt-get install npm
 % npm install socket.io
 
-Then start up the core rooter service with node:
+Start up the core rooter service with node:
 
 % node core.js
 

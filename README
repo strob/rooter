@@ -17,12 +17,23 @@ functionality.
 
 Core rooter state is maintained in a singleton object, `rooter':
 
-var rooter = require('rooter');
-
 The `core.js' node script is run on the router and loads/dispatches to
 other modules as necessary. The default dispatch scheme is
 subdirectory-based, ie. http://rooter/proxy loads the `proxy'
 submodule.
+
+Submodules, found in the `node_modules' directory, are standard nodejs
+directory modules, that may export `handle' and `init' functions:
+
++ handle( req, res, ctx ) // called for every request to submodule page
++ init ( ctx )  // called once, on first load
+
+The context object contains a rooter instance and a socket.io
+connection, allowing realtime interaction with both router and web
+client:
+
++ ctx = {rooter: _ , io: _ }
+
 
 == INSTALLATION
 
